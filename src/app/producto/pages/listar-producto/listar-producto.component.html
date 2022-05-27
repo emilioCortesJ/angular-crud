@@ -1,0 +1,38 @@
+<div class="col" id="main">
+  <h3>Lista de productos</h3>
+  <table class="table caption-top">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <th scope="row">{{ producto.id_producto }}</th>
+        <td>{{ producto.producto }}</td>
+        <td>{{ producto.descripcion }}</td>
+        <td>
+          <img [src]="producto.foto" class="img-fluid img-thumbnail resize" />
+        </td>
+        <td class="d-grip gap-2">
+          <button
+            class="btn btn-warning"
+            [routerLink]="['/editar', producto.id_producto]"
+          >
+            Editar
+          </button>
+          <button
+            class="btn btn-danger"
+            (click)="eliminarProducto(producto.id_producto)"
+          >
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
