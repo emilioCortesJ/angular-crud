@@ -8,7 +8,7 @@ import { Producto } from '../interfaces/producto.interface';
 })
 export class ProductoService {
 
-  private apiUrl: string = "http://localhost:4500/producto";
+  private apiUrl: string = "https://crud-productos-prueba.herokuapp.com/producto";
 
   constructor(private http: HttpClient) { }
 
