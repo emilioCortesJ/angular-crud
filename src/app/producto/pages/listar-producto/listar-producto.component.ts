@@ -21,10 +21,11 @@ export class ListarProductoComponent implements OnInit {
   productos: Producto[] = [];
 
   constructor(private productoService: ProductoService, private router: Router) {
-    this.obtenerProductos();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.obtenerProductos()
+  }
 
   obtenerProductos = () => {
     this.productoService.obtenerProductos().subscribe((res) => {

@@ -30,7 +30,7 @@ export class EditarProductoComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       if (params.get('id')) {
         this._id_producto = params.get('id')!;
-        this.obtenerProducto()
+        this.obtenerProducto();
       } else {
         Swal.fire({
           title: 'Error!',
@@ -38,7 +38,7 @@ export class EditarProductoComponent implements OnInit {
           icon: 'error',
           confirmButtonText: 'Ok',
         });
-        this._location.back()
+        this._location.back();
       }
     });
   }
@@ -56,7 +56,7 @@ export class EditarProductoComponent implements OnInit {
             icon: 'error',
             confirmButtonText: 'Ok',
           });
-          this._location.back()
+          this._location.back();
         }
       });
   };
@@ -76,7 +76,7 @@ export class EditarProductoComponent implements OnInit {
           confirmButtonText: 'Ok',
         });
       }
+      this._location.back();
     });
-    this._location.back()
   };
 }
