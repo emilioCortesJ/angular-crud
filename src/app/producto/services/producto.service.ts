@@ -8,15 +8,15 @@ import { Producto } from '../interfaces/producto.interface';
 })
 export class ProductoService {
 
-  private apiUrl: string = "https://crud-productos-prueba.herokuapp.com/producto";
+  private apiUrl: string = "http://localhost:4500/producto";
 
   constructor(private http: HttpClient) { }
 
-  obtenerProductos = (): Observable<any> => {
-    return this.http.get(`${this.apiUrl}/get`);
+  obtenerProductos = (offset: number = 0): Observable<any> => {
+    return this.http.get(`${this.apiUrl}/get?offset=${offset}`);
   }
 
-  obtenerProducto = (id_producto:number): Observable<any> => {
+  obtenerProducto = (id_producto:number, ): Observable<any> => {
     return this.http.get(`${this.apiUrl}/get?id_producto=${id_producto}`);
   }
 
